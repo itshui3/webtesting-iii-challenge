@@ -1,7 +1,7 @@
 // Test away!
 
 import React from 'react'
-import { render } from '@testing-library/react'
+import { render, fireEvent } from '@testing-library/react'
 
 import Controls from './Controls'
 
@@ -15,6 +15,8 @@ describe('button to toggle locked state', () => {
     const { getByText } = render(<Controls locked={false} />)
     getByText(/lock gate/i)
   })
+
+
 
 })
 
