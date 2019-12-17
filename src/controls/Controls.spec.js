@@ -5,6 +5,12 @@ import { render, fireEvent } from '@testing-library/react'
 
 import Controls from './Controls'
 
+test('Controls renders snapshot', () => {
+  const { asFragment } = render(<Controls />)
+
+  expect(asFragment()).toMatchSnapshot()
+})
+
 describe('button to toggle locked state', () => {
 
   test('rendered button reads "unlock gate" if gate is locked', () => {
@@ -15,9 +21,6 @@ describe('button to toggle locked state', () => {
     const { getByText } = render(<Controls locked={false} />)
     getByText(/lock gate/i)
   })
-
-
-
 })
 
 describe('the being of "locked" state', () => {

@@ -7,6 +7,12 @@ import Dashboard from './Dashboard'
 
 describe('dashboard component', () => {
 
+  test('Dashboard renders snapshot', () => {
+    const { asFragment } = render(<Dashboard />)
+  
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   it('renders in default unlocked and open', () => {
     const { getByText } = render(<Dashboard />)
 

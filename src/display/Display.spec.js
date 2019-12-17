@@ -1,11 +1,17 @@
 // Test away!
 
 import React from 'react'
-import { render, getByText } from '@testing-library/react'
+import { render } from '@testing-library/react'
 
 import Display from './Display'
 // pass in closed/locked props
 // assert expectations
+
+test('Display renders snapshot', () => {
+  const { asFragment } = render(<Display />)
+
+  expect(asFragment()).toMatchSnapshot()
+})
 
 test('gate defaults as unlocked and opened', () => {
   const { getByText } = render(<Display />)
@@ -30,8 +36,6 @@ describe('gate locking and unlocking', () => {
   test('gate unlocked', () => {
     const { getByText, queryByText } = render(<Display locked={false} />)
 
-    // expect(queryByText(/locked/i)).toBe(/unlocked/i)
-    // problem writing this assertion because unlocked contains the word locked and I want to test to make sure locked isn't present
     getByText(/unlocked/i)
   })
   test('unlocked gate displays green-led', () => {

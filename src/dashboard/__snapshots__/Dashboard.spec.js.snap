@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dashboard component Dashboard renders snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="display panel"
+  >
+    <div
+      class="led green-led"
+    >
+      Unlocked
+    </div>
+    <div
+      class="led green-led"
+    >
+      Open
+    </div>
+  </div>
+  <div
+    class="controls panel"
+  >
+    <button
+      class="toggle-btn"
+      data-testid="toggleLock"
+      disabled=""
+    >
+      Lock Gate
+    </button>
+    <button
+      class="toggle-btn"
+      data-testid="toggleClose"
+    >
+      Close Gate
+    </button>
+  </div>
+</DocumentFragment>
+`;
